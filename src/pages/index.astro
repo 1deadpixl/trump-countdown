@@ -1,16 +1,38 @@
 ---
-
+import CountdownClock from "../components/CountdownClock.vue";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Countdown to America's Freedom</title>
+  </head>
+  <body>
+    <div class="relative h-[800px]">
+      <img
+        src="banner.jpg"
+        alt=""
+        srcset="banner@2x.jpg 2x"
+        class="object-cover w-full h-full absolute"
+      />
+      <div class="absolute bottom-12 w-full">
+        <div class="container mx-auto">
+          <CountdownClock client:only="vue" />
+        </div>
+      </div>
+    </div>
+    <div class="container mx-auto text-center leading-tight my-20">
+      <p class="text-[72px] font-bold">
+        Counting down to<br />America's Freedom
+      </p>
+    </div>
+  </body>
 </html>
