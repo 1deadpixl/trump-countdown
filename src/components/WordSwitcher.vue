@@ -11,7 +11,7 @@ onMounted(() => {
 
 <template>
   <div class="text-center leading-tight my-20">
-    <p class="text-[72px] font-bold">
+    <p class="text-5xl lg:text-[72px] font-bold">
       Counting down to<br /><span id="word-switch"></span>
     </p>
   </div>

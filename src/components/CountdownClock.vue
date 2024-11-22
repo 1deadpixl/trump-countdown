@@ -21,7 +21,7 @@ onMounted(() => {
 
 <template>
   <div
-    class="grid grid-cols-4 mx-auto text-center xl:text-[108px] max-w-screen-lg gap-4 text-zinc-50"
+    class="grid grid-rows-4 sm:grid-rows-none sm:grid-cols-4 mx-auto px-8 text-center text-[54px] lg:text-[84px] xl:text-[108px] max-w-screen-lg gap-4 text-zinc-50"
   >
     <div
       class="bg-slate-600 backdrop-blur-md bg-opacity-80 rounded-lg px-4 py-2"
