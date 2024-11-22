@@ -1,5 +1,6 @@
 ---
 import CountdownClock from "../components/CountdownClock.vue";
+import WordSwitcher from "../components/WordSwitcher.vue";
 ---
 
 <html lang="en">
@@ -29,10 +30,8 @@ import CountdownClock from "../components/CountdownClock.vue";
         </div>
       </div>
     </div>
-    <div class="container mx-auto text-center leading-tight my-20">
-      <p class="text-[72px] font-bold">
-        Counting down to<br />America's Freedom
-      </p>
+    <div class="container mx-auto">
+      <WordSwitcher client:only="vue" />
     </div>
   </body>
 </html>
