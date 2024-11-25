@@ -1,29 +1,72 @@
 <script setup>
-import { onMounted } from "vue";
-import wordSwitcher from "word-switcher";
-const words = ["America's Freedom", "Better Choices", "Strong Economy"];
+import { ref, onMounted } from "vue";
+
+const words = [
+  "America's Freedom",
+  "Economic Growth",
+  "America-First Policies",
+  "Judicial Convervatism",
+  "Border Security",
+  "Law Enforcement Support",
+  "Tax Reforms",
+  "Deregulation",
+  "Educational Freedom",
+  "National Pride",
+];
+const interval = 5000;
+const randomize = false;
+
+let curIndex = ref(0);
+
+function nextRandIndex() {
+  let newRand = Math.floor(Math.random() * words.length);
+
+  if (newRand === curIndex.value) {
+    nextRandIndex();
+  } else {
+    curIndex.value = newRand;
+  }
+}
+
+function nextIndex() {
+  curIndex.value = curIndex.value === words.length - 1 ? 0 : curIndex.value + 1;
+}
 
 onMounted(() => {
-  const target = document.querySelector("#word-switch");
-  wordSwitcher(target, words, { random: true, animationDuration: 250 });
+  setInterval(() => {
+    if (randomize) {
+      nextRandIndex();
+    } else {
+      nextIndex();
+    }
+    console.log(curIndex.value);
+  }, interval);
 });
 </script>
-
 <template>
-  <div class="text-center leading-tight my-20">
-    <p class="text-5xl lg:text-[72px] font-bold">
-      Counting down to<br /><span id="word-switch"></span>
-    </p>
+  <div class="my-12 md:my-20">
+    <div
+      class="text-5xl md:text-[60px] lg:text-[72px] font-bold flex flex-col justify-center items-center gap-2 text-center"
+    >
+      <div>Countdown to</div>
+      <div class="flex justify-center">
+        <span class="invisible">&nbsp;</span>
+        <Transition appear>
+          <span :key="curIndex" class="absolute">{{ words[curIndex] }}</span>
+        </Transition>
+      </div>
+    </div>
   </div>
 </template>
 
 <style lang="css">
-.word-switcher-enter-active,
-.word-switcher-leave-active {
+.v-enter-active,
+.v-leave-active {
   transition: opacity 1s;
 }
-.word-switcher-enter,
-.word-switcher-leave-to {
+
+.v-enter-from,
+.v-leave-to {
   opacity: 0;
 }
 </style>
