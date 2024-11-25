@@ -22,8 +22,7 @@ import WordSwitcher from "../components/WordSwitcher.vue";
     <style>
       html,
       body {
-        background-color: #0a3161;
-        @apply text-zinc-50;
+        @apply text-zinc-50 bg-old-glory-blue min-h-[100dvh] relative;
       }
     </style>
   </head>
@@ -35,11 +34,11 @@ import WordSwitcher from "../components/WordSwitcher.vue";
         srcset="banner@2x.jpg 2x"
         class="object-cover w-full h-full absolute object-left sm:object-top top-0 left-0"
       />
-      <div class="sm:absolute sm:bottom-0 mb-4 sm:mb-6 md:mb-8 w-full">
-        <div class="container mx-auto">
+      <div class="sm:absolute sm:bottom-0 w-full">
+        <div class="container mx-auto pb-4 sm:pb-6 md:pb-8">
           <CountdownClock client:only="vue" />
           <p
-            class="text-center mt-4 sm:mt-6 md:mt-8 font-normal text-sm md:text-md lg:text-lg"
+            class="relative text-center mt-4 sm:mt-6 md:mt-8 font-normal text-sm md:text-md lg:text-lg"
           >
             January 20, 2025 12:00pm<br />Washington, D.C.
           </p>
@@ -49,5 +48,13 @@ import WordSwitcher from "../components/WordSwitcher.vue";
     <div class="container mx-auto pb-12">
       <WordSwitcher client:only="vue" />
     </div>
+    <footer
+      class="bg-zinc-50 text-old-glory-red text-xs px-2 py-1 absolute bottom-0 w-full"
+    >
+      Presented by <a
+        href="https://spiritoflibertyfoundation.org/"
+        rel="noopener">Spirit of Liberty Foundation</a
+      >. Built by Phil Enzler.
+    </footer>
   </body>
 </html>

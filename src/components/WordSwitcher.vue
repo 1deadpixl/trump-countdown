@@ -5,7 +5,7 @@ const words = [
   "America's Freedom",
   "Economic Growth",
   "America-First Policies",
-  "Judicial Convervatism",
+  "Judicial Conservatism",
   "Border Security",
   "Law Enforcement Support",
   "Tax Reforms",
@@ -15,6 +15,7 @@ const words = [
 ];
 const interval = 5000;
 const randomize = false;
+const active = true;
 
 let curIndex = ref(0);
 
@@ -32,15 +33,22 @@ function nextIndex() {
   curIndex.value = curIndex.value === words.length - 1 ? 0 : curIndex.value + 1;
 }
 
-onMounted(() => {
-  setInterval(() => {
+function step() {
+  if (active) {
     if (randomize) {
       nextRandIndex();
     } else {
       nextIndex();
     }
-    console.log(curIndex.value);
-  }, interval);
+
+    setTimeout(() => {
+      step();
+    }, interval);
+  }
+}
+
+onMounted(() => {
+  step();
 });
 </script>
 <template>
@@ -50,7 +58,8 @@ onMounted(() => {
     >
       <div>Countdown to</div>
       <div class="flex justify-center">
-        <span class="invisible">&nbsp;</span>
+        <span class="hidden xl:invisible">&nbsp;</span>
+        <span class="invisible xl:hidden">&nbsp;<br />&nbsp;</span>
         <Transition appear>
           <span :key="curIndex" class="absolute">{{ words[curIndex] }}</span>
         </Transition>
@@ -62,7 +71,7 @@ onMounted(() => {
 <style lang="css">
 .v-enter-active,
 .v-leave-active {
-  transition: opacity 1s;
+  transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .v-enter-from,

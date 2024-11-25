@@ -21,10 +21,10 @@ onMounted(() => {
 
 <template>
   <div
-    class="grid grid-rows-4 sm:grid-rows-none sm:grid-cols-4 mx-auto px-8 text-center text-[54px] md:text-[84px] lg:text-[108px] max-w-60 sm:max-w-screen-lg gap-4 text-zinc-50"
+    class="grid grid-rows-4 sm:grid-rows-none sm:grid-cols-4 justify-center mx-auto px-8 text-center text-[54px] md:text-[84px] lg:text-[108px] max-w-screen-lg gap-4 text-zinc-50"
   >
     <div
-      class="bg-slate-600 backdrop-blur-md bg-opacity-80 rounded-lg px-4 py-2"
+      class="bg-old-glory-blue backdrop-blur-md bg-opacity-50 rounded-lg px-4 py-2"
     >
       <span class="font-orbitron font-semibold">{{
         String(timeLeft.values.days).padStart(2, "0")
@@ -34,7 +34,7 @@ onMounted(() => {
       </p>
     </div>
     <div
-      class="bg-slate-600 backdrop-blur-md bg-opacity-80 rounded-lg px-4 py-2"
+      class="bg-old-glory-blue backdrop-blur-md bg-opacity-50 rounded-lg px-4 py-2"
     >
       <span class="font-orbitron font-semibold">{{
         String(timeLeft.values.hours).padStart(2, "0")
@@ -44,7 +44,7 @@ onMounted(() => {
       </p>
     </div>
     <div
-      class="bg-slate-600 backdrop-blur-md bg-opacity-80 rounded-lg px-4 py-2"
+      class="bg-old-glory-blue backdrop-blur-md bg-opacity-50 rounded-lg px-4 py-2"
     >
       <span class="font-orbitron font-semibold">{{
         String(timeLeft.values.minutes).padStart(2, "0")
@@ -54,7 +54,7 @@ onMounted(() => {
       </p>
     </div>
     <div
-      class="bg-slate-600 backdrop-blur-md bg-opacity-80 rounded-lg px-4 py-2"
+      class="bg-old-glory-blue backdrop-blur-md bg-opacity-50 rounded-lg px-4 py-2"
     >
       <span class="font-orbitron font-semibold">{{
         String(Math.floor(timeLeft.values.seconds)).padStart(2, "0")

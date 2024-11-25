@@ -9,6 +9,10 @@ export default {
 			fontFamily: {
 				'sans': ['Public Sans', ...defaultTheme.fontFamily.sans],
 				'orbitron': ['Orbitron', ...defaultTheme.fontFamily.sans],
+			},
+			colors: {
+				'old-glory-blue': '#0A3161',
+				'old-glory-red': '#B31942'
 			}
 		},
 	},
