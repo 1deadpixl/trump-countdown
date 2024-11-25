@@ -48,7 +48,9 @@ function step() {
 }
 
 onMounted(() => {
-  step();
+  setTimeout(() => {
+    step();
+  }, interval);
 });
 </script>
 <template>
