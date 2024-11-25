@@ -56,14 +56,16 @@ onMounted(() => {
 <template>
   <div class="my-12 md:my-20">
     <div
-      class="text-5xl md:text-[60px] lg:text-[72px] font-bold flex flex-col justify-center items-center gap-2 text-center"
+      class="text-5xl md:text-[60px] lg:text-[72px] font-bold flex flex-col justify-center items-center gap-2 text-center relative"
     >
       <div>Countdown to</div>
       <div class="flex justify-center">
         <span class="hidden xl:invisible">&nbsp;</span>
         <span class="invisible xl:hidden">&nbsp;<br />&nbsp;</span>
         <Transition appear>
-          <span :key="curIndex" class="absolute">{{ words[curIndex] }}</span>
+          <span :key="curIndex" class="absolute left-0 w-full">{{
+            words[curIndex]
+          }}</span>
         </Transition>
       </div>
     </div>
